@@ -26,21 +26,21 @@ app.listen(3001, () => console.log('Server running on port 3001'))
 app.post('/api', (req, res) => {
   console.log("here in api")
   console.log(req.body.data)
-  // console.log("query",req.body.data.query)
-  // console.log("query",req.body.data.ll)
-  /
-
-
-
   client.search(req.body.data).then(response => {
-  //  res.setHeader('Access-Control-Allow-Origin', '*');
   console.log(response)
   res.send(response)
+
 }).catch(e => {
   console.log(e);
 })
 
 })
+
+
+
+
+
+
 
 app.get('/fake', (req, res) => {
   
