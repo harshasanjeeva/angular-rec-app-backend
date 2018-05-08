@@ -9,9 +9,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.16.3",
     "body-parser": "^1.18.2",
     "cors": "^2.8.4",
+    "express": "^4.16.3",
+    "mongoose": "^5.0.17",
     "node-fpe": "^1.0.0",
     "nodemon": "^1.17.3",
     "yelp-fusion": "^2.0.3"
