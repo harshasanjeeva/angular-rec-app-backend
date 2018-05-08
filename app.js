@@ -4,7 +4,7 @@ var cors = require('cors');
 var app = express();
 var bodyParser = require('body-parser');
 var corsOptions = {
-  origin: 'http://localhost:3000',
+ origin: 'http://localhost:4200',
   credentials: true,
   optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
 };
@@ -24,20 +24,17 @@ app.listen(3001, () => console.log('Server running on port 3001'))
 
 
 app.post('/api', (req, res) => {
-  
-  console.log(req.body)
-  console.log("query",req.body.data.query)
-  console.log("query",req.body.data.ll)
-  //req.body.data.ll
-  //var longe = 123;
-  var encry = cipher.encrypt('123')
-  console.log("cipher",encry)
-   var decry= cipher.decrypt(encry)
-  console.log("decry",decry)
+  console.log("here in api")
+  console.log(req.body.data)
+  // console.log("query",req.body.data.query)
+  // console.log("query",req.body.data.ll)
+  /
 
 
 
-  client.search(req.body.data.searchRequest).then(response => {
+  client.search(req.body.data).then(response => {
+  //  res.setHeader('Access-Control-Allow-Origin', '*');
+  console.log(response)
   res.send(response)
 }).catch(e => {
   console.log(e);
@@ -45,7 +42,7 @@ app.post('/api', (req, res) => {
 
 })
 
-app.post('/fake', (req, res) => {
+app.get('/fake', (req, res) => {
   
   console.log("1",)
   
